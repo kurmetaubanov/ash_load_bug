@@ -16,12 +16,12 @@ defmodule AshLoadBug.Cafe.Employee do
 
     create :create do
       primary? true
-      accept [:name]
+      accept [:name, :user_id]
     end
 
     update :update do
       primary? true
-      accept [:name]
+      accept [:name, :user_id]
     end
   end
 
@@ -45,11 +45,11 @@ defmodule AshLoadBug.Cafe.Employee do
     policy action_type(:read) do
       authorize_if {AshLoadBug.Cafe.Check, []}
     end
-    
+
     policy action_type(:create) do
       authorize_if {AshLoadBug.Cafe.Check, []}
     end
-    
+
     policy action_type(:update) do
       authorize_if {AshLoadBug.Cafe.Check, []}
     end

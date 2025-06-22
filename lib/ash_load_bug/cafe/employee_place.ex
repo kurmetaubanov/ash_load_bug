@@ -38,20 +38,17 @@ defmodule AshLoadBug.Cafe.EmployeePlace do
   end
 
   policies do
-    # policy action_type(:read) do
-    #   authorize_if {AshLoadBug.Cafe.Check, []}
-    # end
+    policy action_type(:read) do
+      authorize_if {AshLoadBug.Cafe.Check, []}
+    end
 
-    # policy action_type(:create) do
-    #   authorize_if {AshLoadBug.Cafe.Check, []}
-    # end
-
-    # policy action_type(:update) do
-    #   authorize_if {AshLoadBug.Cafe.Check, []}
-    # end
-
-    policy always() do
+    policy action_type(:create) do
       authorize_if always()
     end
+
+    policy action_type(:update) do
+      authorize_if always()
+    end
+
   end
 end

@@ -34,6 +34,7 @@ defmodule AshLoadBug.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:simple_sat, "~> 0.1.3"},
       {:sourceror, "~> 1.8", only: [:dev, :test]},
       {:ash_postgres, "~> 2.0"},
       {:ash, "~> 3.0"},

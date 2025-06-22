@@ -45,7 +45,10 @@ config :spark,
 
 config :ash_load_bug,
   ecto_repos: [AshLoadBug.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_domains: [
+    AshLoadBug.Cafe,
+  ]
 
 # Configures the endpoint
 config :ash_load_bug, AshLoadBugWeb.Endpoint,

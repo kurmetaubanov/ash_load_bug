@@ -91,6 +91,14 @@ defmodule AshLoadBugWeb.BoardLive do
     assign(socket, users: users)
   end
 
+  defp message_class(message) do
+    if String.contains?(message, "Error") do
+      "mb-4 p-3 rounded bg-red-100 text-red-700"
+    else
+      "mb-4 p-3 rounded bg-green-100 text-green-700"
+    end
+  end
+
   def render(assigns) do
     ~H"""
     <div class="max-w-4xl mx-auto p-6">
@@ -124,7 +132,7 @@ defmodule AshLoadBugWeb.BoardLive do
         </div>
 
         <%= if @message do %>
-          <div class="mb-4 p-3 rounded <%= if String.contains?(@message, "Error"), do: "bg-red-100 text-red-700", else: "bg-green-100 text-green-700" %>">
+          <div class={message_class(@message)}>
             <%= @message %>
           </div>
         <% end %>

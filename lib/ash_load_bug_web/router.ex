@@ -17,7 +17,8 @@ defmodule AshLoadBugWeb.Router do
   scope "/", AshLoadBugWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/board", BoardLive
   end
 
   # Other scopes may use custom stacks.
